@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Watch & Earn - Paiement</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html">Accueil</a>
+    <a href="bonus.html">Bonus</a>
+    <a href="paiement.html" class="active">Paiement</a>
+  </nav>
+  <main>
+    <h1>Demande de retrait</h1>
+    <p>Solde disponible : <span id="points">0</span> points</p>
+    <form id="withdrawForm">
+      <label for="amount">Montant à retirer (en points):</label><br/>
+      <input type="number" id="amount" name="amount" min="100" step="10" required /><br/>
+      <button type="submit">Demander le retrait</button>
+    </form>
+    <p id="message"></p>
+  </main>
+  <script src="app.js"></script>
+  <script src="paiement.js"></script>
+</body>
+</html>

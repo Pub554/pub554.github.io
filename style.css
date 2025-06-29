@@ -1,0 +1,139 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #121212;
+  color: #eee;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+nav {
+  background-color: #0f9;
+  display: flex;
+  justify-content: center;
+  padding: 12px 0;
+  box-shadow: 0 3px 8px rgba(0, 255, 150, 0.6);
+}
+
+nav a {
+  color: #222;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 0 18px;
+  font-size: 1.1rem;
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+nav a:hover {
+  border-bottom: 3px solid #090;
+}
+
+nav a.active {
+  border-bottom: 3px solid #070;
+  color: #070;
+  cursor: default;
+}
+
+main {
+  flex-grow: 1;
+  max-width: 480px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #0f9;
+  margin-bottom: 30px;
+  font-weight: 900;
+  letter-spacing: 1.4px;
+}
+
+.progress-container {
+  margin-bottom: 24px;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+  appearance: none;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #444;
+}
+
+progress::-webkit-progress-value {
+  background-color: #0f9;
+  transition: width 0.4s ease;
+}
+
+button {
+  background-color: #0f9;
+  border: none;
+  padding: 16px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-radius: 10px;
+  color: #222;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.25s ease;
+}
+
+button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background-color: #08c963;
+}
+
+#status {
+  margin-top: 20px;
+  font-style: italic;
+  font-weight: 600;
+  text-align: center;
+  color: #0f9;
+  min-height: 24px;
+}
+
+form label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+}
+
+form button {
+  margin-top: 0;
+}
+
+#message {
+  margin-top: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #0f9;
+  min-height: 24px;
+}
+
+#bonusList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-size: 1.1rem;
+  color: #0f9;
+}
