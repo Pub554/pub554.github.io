@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Watch & Earn - Regarder une pub</title>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3122082806514799" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <h1>Regarde cette publicité</h1>
+    <p>Tu recevras des points après 10 secondes</p>
+
+    <!-- Bloc pub AdSense -->
+    <ins class="adsbygoogle"
+         style="display:block; text-align:center;"
+         data-ad-client="ca-pub-3122082806514799"
+         data-ad-slot="1234567890"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+    <p id="timer">10</p>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    let secondsLeft = 10;
+    const timer = document.getElementById('timer');
+
+    const interval = setInterval(() => {
+      secondsLeft--;
+      timer.textContent = secondsLeft;
+      if(secondsLeft <= 0){
+        clearInterval(interval);
+        // Ajout des points après visionnage pub
+        let currentPoints = window.WatchEarn.getPoints();
+        let level = window.WatchEarn.getLevel(currentPoints);
+        let bonusMultiplier = window.WatchEarn.calculateBonusMultiplier(level);
+        let pointsEarned = Math.floor(10 * bonusMultiplier);
+        window.WatchEarn.setPoints(currentPoints + pointsEarned);
+
+        // Incrémenter vidéos regardées
+        let watched = window.WatchEarn.getVideosWatched();
+        window.WatchEarn.setVideosWatched(watched + 1);
+
+        // Retour automatique
+        window.location.href = "index.html";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
