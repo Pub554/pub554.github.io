@@ -1,0 +1,58 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100vw;
+  overflow: hidden;
+  background: #181d23;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+#game-container {
+  width: 100vw;
+  height: 100vh;
+  touch-action: none;
+  position: absolute;
+  left: 0; top: 0;
+  z-index: 1;
+}
+#ui {
+  position: absolute;
+  left: 0; top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 2;
+}
+#dialogue {
+  position: absolute;
+  bottom: 12vw;
+  left: 5vw;
+  width: 90vw;
+  min-height: 10vw;
+  background: rgba(30,32,50,0.93);
+  color: #b2e6ff;
+  border-radius: 2vw;
+  font-size: 5vw;
+  padding: 3vw;
+  pointer-events: auto;
+  box-shadow: 0 0 2vw #000a;
+  text-align: left;
+  transition: opacity 0.5s;
+}
+#btn-action {
+  position: absolute;
+  right: 5vw;
+  bottom: 5vw;
+  width: 18vw;
+  height: 18vw;
+  border-radius: 50%;
+  background: #3187e3;
+  color: #fff;
+  border: none;
+  font-size: 7vw;
+  box-shadow: 0 0 2vw #0008;
+  pointer-events: auto;
+  transition: background 0.2s;
+}
+#btn-action:active { background: #2460a8; }
+.hidden { display: none; }
